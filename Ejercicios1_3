@@ -1,0 +1,3 @@
+peso=input("¿Cuál es su peso en kg? ")
+estatura=input("Cuál es su estatura en metros? ")
+print("Tu ìndice de masa corporal es"+ str((round(float(peso)/float(estatura)**2,2))))
