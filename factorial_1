@@ -1,4 +1,6 @@
 def factorial(numero):
+    if numero==0:
+        return 0
     fac=1
     for i in range(numero):
         fac=fac*(i+1)
