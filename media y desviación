@@ -1,0 +1,11 @@
+lista2=input("Introduce una muestra de números separados por comas: ")
+lista2=lista2.split(',')
+suma=0
+sumsq=0
+for i in lista2:
+  suma=suma+int(i)
+  sumq+=int(1)**2
+n=len(lista2)
+p=suma/n
+stdev=(sumsq/n-p**2)**(1/2)
+print("La media es",p,", y la desviación típica es",stdev)
