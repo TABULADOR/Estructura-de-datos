@@ -1,0 +1,13 @@
+print("Promedio de notas.")
+n=int(input("Ingrese la cantidad de notas: "))
+print("ingrese las notas del alumno: ")
+notas=[]
+suma=0
+for i in range(n):
+  print(str(i+1)+"a nota: ")
+  nota=int(input("\t\t"))
+  notas.append(nota)
+for i in notas:
+  suma=suma+i
+p=int(suma/n)
+print("El promedio es: ", p)
