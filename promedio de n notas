@@ -1,0 +1,10 @@
+print("Promedio de notas.")
+n=int(input("Ingrese la cantidad de notas: "))
+print("ingrese las notas del alumno: ")
+notas=0
+for i in range(n):
+  print(str(i+1)+"a nota: ")
+  nota=int(input("\t\t"))
+  notas=notas+nota
+p=int(notas/n)
+print("El promedio es: ", p)
