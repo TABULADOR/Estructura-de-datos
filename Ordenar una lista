@@ -1,0 +1,6 @@
+n=int(input(" "))
+a=[]
+for i in range(n):
+  a.append(int(input("Introduce un nùmero ganador: ")))
+a.sort()
+print("Los números ganadores son: ", str(a))
