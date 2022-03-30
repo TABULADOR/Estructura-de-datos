@@ -1,0 +1,7 @@
+pila=["Domingo","Sábado","Viernes","Jueves","Miércoles","Martes","Lunes"]
+cola=[]
+print(pila)
+for i in range(len(pila)):
+    cola.append(pila[-(i+1)])
+print(cola)
+print(pila)
