@@ -1,0 +1,22 @@
+import os
+
+nombre = "a.txt"
+
+archivo = open(nombre, "w")
+
+archivo.write("Leeeeroooooy Jenkins\n")
+archivo.write("Leeeeroooooy Jenkins\n")
+archivo.write("Leeeeroooooy Jenkins")
+archivo.close()
+
+if nombre in os.listdir("."):
+    print("\nArchivo creado en la ruta: \n\n\t{0}/{1}".format(
+        os.getcwd(),nombre))
+    
+else:
+    print("El archivo nomfue creado!!!\n")
+    
+archivo = open(nombre, "r")
+
+for linea in archivo:
+    print(linea , "\n")
