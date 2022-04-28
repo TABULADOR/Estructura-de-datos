@@ -1,0 +1,19 @@
+from datetime import datetime
+fecha=str(datetime.today())
+
+chat = "chat.txt"
+
+archivo = open(chat, "r")
+for linea in archivo:
+    print(linea , "\n")
+
+archivo = open(chat, "w")
+archivo.write(fecha)
+archivo.write("\n\t Daniela: buenos dias gente, yo quiero ir")
+archivo.write("\n\t Mario: ok")
+
+
+
+archivo.close()
+
+
