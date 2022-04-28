@@ -1,3 +1,4 @@
+
 from datetime import datetime
 fecha=str(datetime.today())
 
@@ -8,12 +9,10 @@ for linea in archivo:
     print(linea , "\n")
 
 archivo = open(chat, "w")
-archivo.write(fecha)
-archivo.write("\n\t Daniela: buenos dias gente, yo quiero ir")
-archivo.write("\n\t Mario: ok")
-
-
+texto="\n"+fecha+"\t Daniela: buenos dias, yo quiero ir."
+archivo.write(texto)
+texto="\n"+fecha+"\t Mario: Bien!"
+archivo.write(texto)
 
 archivo.close()
-
 
