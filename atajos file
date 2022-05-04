@@ -1,11 +1,15 @@
 f = open("demofile.txt", "r")
 
+r  leer
+w  escribir
+x  crear
+
 print(f.readline())
 
 for x in f:
   print(x)
   
-  
+ f.write(" ")
   
   
   
