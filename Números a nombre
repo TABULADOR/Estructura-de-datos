@@ -1,0 +1,27 @@
+centena=["ciento","doscientos"]
+decena=["dies","veinti","treinta","cuarenta","cincuenta","secenta","setenta","ochenta","noventa"]
+unidad=["uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"]
+dies=["once","doce","trece","catorce","quince"]
+numero1=int(input("ingrese la unidad de un número: "))
+numero2=int(input("ingrese la decena de un número: "))
+numero3=int(input("ingrese la centena de un número: "))
+nombre=" "
+if numero3==1 and numero2==0 and numero1==0:
+  nombre=="cien"
+if numero3>0:
+  nombre=nombre+centena[(numero3 - 1)]
+if numero2==2:
+  if numero1==0:
+    nombre=nombre+" veinte"
+  else:
+    nombre=nombre+" veinti"+unidad[(numero1 - 1)]
+if numero2==1:
+  if numero1<6:
+    nombre=nombre+" "+dies[(numero1 - 1)]
+  if numero1>6:
+    nombre=nombre+" dies y "+unidad[(numero1 - 1)]
+if numero2>2:
+  nombre=nombre+" "+decena[(numero2)-1]+" y "+unidad [(numero1 - 1)]
+if numero2==0:
+  nombre=nombre+" "+unidad[(numero1 - 1)]
+print("El número es:",nombre)
