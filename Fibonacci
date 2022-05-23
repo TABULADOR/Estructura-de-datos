@@ -1,0 +1,9 @@
+lista=[1,1]
+x=0
+z=int(input("Escribe un valor: "))
+for i in range(z):
+  if i>=2:
+    valor1=(lista[(int(i)-1)])
+    valor2=(lista[(int(i)-2)])
+    lista.append(valor1+valor2)
+print(lista)
