@@ -1,0 +1,38 @@
+import os
+from datetime import datetime
+fecha=str(datetime.today())    
+def leerchat():
+    chat = "chat.txt"
+    if chat in os.listdir("."):
+        print("\nArchivo creado en la ruta: \n\n\t{0}/{1}".format(os.getcwd(),chat))
+    else:
+        archivo = open(chat, "x")
+        archivo.close()
+    archivo = open(chat, "r")
+    for linea in archivo:
+        historial.append(linea)
+    archivo.close()
+    return
+def escribir():
+    texto=input("Mensaje: ")
+    if texto=="":
+        return
+    else:
+        texto=fecha+"\t Carlos: "+texto+"\n"
+        historial.append(texto)
+        return
+    return
+def cerrar():
+    chat = "chat.txt"
+    archivo = open(chat, "w")
+    for i in historial:
+        archivo.write(i)
+    archivo.close()
+    return
+historial=[]
+leerchat()
+for i in historial:
+    print(i)
+escribir()
+cerrar()
+historial=[]
