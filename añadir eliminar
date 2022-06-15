@@ -1,0 +1,113 @@
+import os
+class ae:
+    def __init__(self):
+        self.lis=[]
+    def leer(self):
+        ar = "añadir_eliminar.txt"
+        if ar in os.listdir("."):
+            print("\nArchivo creado en la ruta: \n\n\t{0}/{1}".format(os.getcwd(),ar))
+        else:
+            archivo = open(ar, "x")
+            archivo.close()
+            archivo=open(ar,"w")
+            archivo.write('Promociones:\nUbicaciones:\nProducto:\nServicio:\n')
+            archivo.close()
+        archivo = open(ar, "r")
+        for linea in archivo:
+            self.lis.append(linea)
+        archivo.close()
+        return
+    def mostrar(self):
+        print(self.lis)
+        return
+    def añadir(self):
+        valor=1
+        while valor!=0:
+            print("Qué tipo de dato quieres añadir?")
+            print("\t1-Promocion\n\t2-Ubicación\n\t3-Producto\n\t4-Servicio\n\t0-cerrar")
+            valor=input()
+            if valor=="1":
+                cont=1
+            if valor=="2":
+                cont=2
+            if valor=="3":
+                cont=3
+            if valor=="4":
+                cont=4
+            if valor=="0":
+                return
+            valor=0
+            dato=str(input("Introduce un dato: "))
+            ae.modificarañadir(cont,dato)
+            return
+    def modificarañadir(self,cont,dato):
+        ar = "añadir_eliminar.txt"
+        archivo=open(ar,"w")
+        a=1
+        for i in self.lis:
+            archivo.write(i)
+            if a == cont:
+                archivo.write(dato)
+                archivo.write("\n")
+            if i=="Promociones:\n" or i== "Ubicaciones:\n" or i== "Producto:\n" or i== "Servicio:"or i== "Servicio:\n":
+                a=a+1 
+        archivo.close()
+        return
+    def eliminar(self):
+        valor=1
+        while valor!=0:
+            print("Qué tipo de dato quieres eliminar?")
+            print("\t1-Promocion\n\t2-Ubicación\n\t3-Producto\n\t4-Servicio\n\t0-cerrar")
+            valor=input()
+            if valor=="1":
+                cont=1
+            if valor=="2":
+                cont=2
+            if valor=="3":
+                cont=3
+            if valor=="4":
+                cont=4
+            if valor=="0":
+                return
+            valor=0
+            dato=str(input("Introduce un dato: "))
+            ae.modificareliminar(cont,dato)
+            return
+    def modificareliminar(self,cont,dato):
+        dato=dato+"\n"
+        a=0
+        val=-1
+        for i in self.lis:
+            val=val + 1
+            if a == cont:
+                if i==dato:
+                    self.lis.pop(val)
+                    cont=-1
+            if i=="Promociones:\n" or i== "Ubicaciones:\n" or i== "Producto:\n" or i== "Servicio:"or i== "Servicio:\n":
+                a=a+1
+        ar = "añadir_eliminar.txt"
+        archivo=open(ar,"w")
+        a=0
+        for i in self.lis:
+            archivo.write(i)
+        archivo.close()
+        return
+    def reiniciar(self):
+        self.lis=[]
+        return
+ae=ae()
+cont=0
+opcion=-1
+while opcion!="0":
+    print("Qué quieres hacer?\n\t1-Añadir\n\t2-Eliminar\n\t0-Cerrar")
+    opcion=input("")
+    if opcion=="1":
+        ae.leer()
+        ae.mostrar()
+        ae.añadir()
+        ae.reiniciar()
+    if opcion=="2":
+        ae.leer()
+        ae.mostrar()
+        ae.eliminar()
+        ae.reiniciar()
